@@ -1,2 +1,2 @@
-# CRR-Live-Dashboard
-Cyber Readiness Index Rubrics Live Dashboard
+# CRI Live Dashboard
+Cyber Readiness Index Live Dashboard
