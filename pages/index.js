@@ -1,4 +1,4 @@
-
+// File: pages/index.js
 import { useState } from 'react';
 import Papa from 'papaparse';
 import { computeScores } from '../utils/scoring';
@@ -34,30 +34,37 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center text-center">
-      <div className="w-full max-w-6xl bg-white rounded-lg shadow-lg p-8">
-        <header className="mb-10">
-          <div className="flex flex-col items-center space-y-2">
-            <Image src="https://raw.githubusercontent.com/Amrita-TIFAC-Cyber-Blockchain/.github/refs/heads/main/profile/img/AVV_CYS_Logo.png" alt="Institute Logo" width={700} />
+    <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100">
+      <div className="w-full max-w-6xl bg-white rounded-lg shadow-lg p-8 flex flex-col justify-between min-h-[90vh]">
+        <header className="mb-8 text-center">
+          <div className="flex flex-col items-center space-y-4">
+            <Image
+              src="https://raw.githubusercontent.com/Amrita-TIFAC-Cyber-Blockchain/.github/refs/heads/main/profile/img/AVV_CYS_Logo.png"
+              alt="Institute Logo"
+              width={300}
+              height={100}
+            />
             <h1 className="text-3xl font-bold text-gray-800">Cyber Readiness Index (CRI) Dashboard</h1>
           </div>
         </header>
 
-        <main>
-          <div className="mb-8">
+        <main className="flex-grow">
+          <div className="mb-8 text-center">
             <label className="block mb-2 text-lg font-medium text-gray-700">Upload CSV File</label>
-            <input type="file" accept=".csv" onChange={handleFileUpload} className="mx-auto p-2 border rounded shadow" />
+            <input type="file" accept=".csv" onChange={handleFileUpload} className="p-2 border rounded shadow" />
           </div>
 
           {data.length > 0 && (
             <>
-             <button
-                onClick={downloadCSV}
-                className="mb-6 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 shadow"
-              >
-                Download CRI Report
-              </button>
-                  
+              <div className="text-center mb-6">
+                <button
+                  onClick={downloadCSV}
+                  className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 shadow"
+                >
+                  Download CRI Report
+                </button>
+              </div>
+
               <div className="overflow-auto max-h-[400px] shadow border rounded-lg mb-10">
                 <table className="table-auto border-collapse w-full text-sm text-center">
                   <thead className="bg-blue-100">
@@ -99,7 +106,7 @@ export default function Home() {
           )}
         </main>
 
-        <footer className="mt-10 text-sm text-gray-500">
+        <footer className="mt-8 pt-4 border-t text-center text-gray-600 text-sm">
           <p>&copy; 2025 TIFAC-CORE in Cyber Security | Amrita Vishwa Vidyapeetham</p>
           <p>Designed and maintained by Ramaguru Radhakrishnan</p>
         </footer>
