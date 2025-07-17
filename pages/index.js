@@ -35,14 +35,14 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100">
-      <div className="w-full max-w-6xl bg-white rounded-lg shadow-lg p-8 flex flex-col justify-between min-h-[90vh]">
+      <div className="w-full max-w-6xl bg-white rounded-lg shadow-lg p-8 flex flex-col justify-between min-h-[90vh] pb-24">
         <header className="mb-8 text-center">
           <div className="flex flex-col items-center space-y-4">
             <Image
               src="/images/AVV_CYS_Logo.png"
               alt="Institute Logo"
-              width={300}
-              height={100}
+              width={600}
+              height={123}
             />
             <h1 className="text-3xl font-bold text-gray-800">Cyber Readiness Index (CRI) Dashboard</h1>
           </div>
@@ -106,7 +106,7 @@ export default function Home() {
           )}
         </main>
 
-        <footer className="mt-8 pt-4 border-t text-center text-gray-600 text-sm">
+        <footer className="w-full bg-gray-100 border-t text-center py-4 text-sm text-gray-600 fixed bottom-0 left-0">
           <p>&copy; 2025 TIFAC-CORE in Cyber Security | Amrita Vishwa Vidyapeetham</p>
           <p>Designed and maintained by Ramaguru Radhakrishnan</p>
         </footer>
