@@ -39,7 +39,7 @@ export default function Home() {
         <header className="mb-8 text-center">
           <div className="flex flex-col items-center space-y-4">
             <Image
-              src="images/AVV_CYS_Logo.png"
+              src="/images/AVV_CYS_Logo.png"
               alt="Institute Logo"
               width={300}
               height={100}
