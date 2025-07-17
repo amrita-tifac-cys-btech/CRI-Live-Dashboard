@@ -4,21 +4,52 @@
 
 /* --- Custom Global Styles --- */
 body {
-  background-color: #f9fafb; /* light gray background */
+  background-color: #f3f4f6; /* Tailwind gray-100 */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1f2937; /* Tailwind gray-800 */
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
+/* Headings */
 h1, h2, h3 {
   font-weight: 700;
-  color: #1f2937; /* Tailwind gray-800 */
+  color: #1f2937;
+  margin-bottom: 0.5rem;
 }
 
-table {
-  border-radius: 8px;
-  overflow: hidden;
-}
-
+/* Input upload styling */
 input[type="file"] {
   cursor: pointer;
   background-color: white;
+  border-radius: 6px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+/* Table enhancements */
+table {
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 0.5rem 1rem;
+}
+
+/* Button style */
+button {
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  opacity: 0.95;
+}
+
+/* Footer */
+footer {
+  font-size: 0.875rem;
+  color: #6b7280; /* Tailwind gray-500 */
 }
