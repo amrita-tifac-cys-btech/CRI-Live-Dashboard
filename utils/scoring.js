@@ -36,10 +36,10 @@ export function computeScores(row) {
 
   return {
     Name: row.Name || 'Unknown',
-    CGPA: cgpa,
+    CGPA: cgpaScore,
     CTF: ctf,
     Hackathon: hack,
-    Rating: rating,
+    Rating: competitiveScore,
     CRI: cri.toFixed(2),
   };
 }
