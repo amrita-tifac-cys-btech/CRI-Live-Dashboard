@@ -19,12 +19,26 @@ export default function Home() {
     });
   };
 
+  const downloadCSV = () => {
+    const headers = ["Name", "CGPA", "CTF", "Hackathon", "Rating", "CRI"];
+    const rows = data.map(row => [row.Name, row.CGPA, row.CTF, row.Hackathon, row.Rating, row.CRI]);
+    const csvContent = [headers, ...rows].map(e => e.join(",")).join("\n");
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", "CRI_Scores.csv");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center text-center">
       <div className="w-full max-w-6xl bg-white rounded-lg shadow-lg p-8">
         <header className="mb-10">
           <div className="flex flex-col items-center space-y-2">
-            <Image src="https://github.com/Amrita-TIFAC-Cyber-Blockchain/.github/blob/main/profile/img/AVV_CYS_Logo.png" alt="Institute Logo" width={700} />
+            <Image src="https://raw.githubusercontent.com/Amrita-TIFAC-Cyber-Blockchain/.github/refs/heads/main/profile/img/AVV_CYS_Logo.png" alt="Institute Logo" width={700} />
             <h1 className="text-3xl font-bold text-gray-800">Cyber Readiness Index (CRI) Dashboard</h1>
           </div>
         </header>
@@ -37,6 +51,13 @@ export default function Home() {
 
           {data.length > 0 && (
             <>
+             <button
+                onClick={downloadCSV}
+                className="mb-6 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 shadow"
+              >
+                Download CRI Report
+              </button>
+                  
               <div className="overflow-auto max-h-[400px] shadow border rounded-lg mb-10">
                 <table className="table-auto border-collapse w-full text-sm text-center">
                   <thead className="bg-blue-100">
