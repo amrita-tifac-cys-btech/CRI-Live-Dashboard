@@ -2,7 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Optional: Custom styles */
+/* --- Custom Global Styles --- */
 body {
-  @apply bg-gray-50 text-gray-800 font-sans;
+  background-color: #f9fafb; /* light gray background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  color: #1f2937; /* Tailwind gray-800 */
+}
+
+table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+input[type="file"] {
+  cursor: pointer;
+  background-color: white;
 }
