@@ -1,4 +1,4 @@
-// File: pages/index.js
+
 import { useState } from 'react';
 import Papa from 'papaparse';
 import { computeScores } from '../utils/scoring';
@@ -20,32 +20,24 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <header className="bg-white shadow p-4 flex items-center justify-between">
-        <div className="flex items-center space-x-4">
-          <Image src="/logo.png" alt="Institute Logo" width={50} height={50} />
-          <h1 className="text-xl md:text-2xl font-bold text-gray-800">Cyber Readiness Index (CRI) Dashboard</h1>
-        </div>
-        <a
-          href="https://www.example-institution.edu"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 hover:underline"
-        >
-          Visit Institute Website
-        </a>
-      </header>
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center text-center">
+      <div className="w-full max-w-6xl bg-white rounded-lg shadow-lg p-8">
+        <header className="mb-10">
+          <div className="flex flex-col items-center space-y-2">
+            <Image src="https://github.com/Amrita-TIFAC-Cyber-Blockchain/.github/blob/main/profile/img/AVV_CYS_Logo.png" alt="Institute Logo" width={700} />
+            <h1 className="text-3xl font-bold text-gray-800">Cyber Readiness Index (CRI) Dashboard</h1>
+          </div>
+        </header>
 
-      <main className="flex-grow p-6 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-6">
-            <label className="block mb-2 font-semibold text-gray-700">Upload CSV File</label>
-            <input type="file" accept=".csv" onChange={handleFileUpload} className="p-2 border rounded" />
+        <main>
+          <div className="mb-8">
+            <label className="block mb-2 text-lg font-medium text-gray-700">Upload CSV File</label>
+            <input type="file" accept=".csv" onChange={handleFileUpload} className="mx-auto p-2 border rounded shadow" />
           </div>
 
           {data.length > 0 && (
             <>
-              <div className="overflow-auto max-h-[400px] shadow border rounded-lg">
+              <div className="overflow-auto max-h-[400px] shadow border rounded-lg mb-10">
                 <table className="table-auto border-collapse w-full text-sm text-center">
                   <thead className="bg-blue-100">
                     <tr>
@@ -72,7 +64,7 @@ export default function Home() {
                 </table>
               </div>
 
-              <div className="mt-10 h-96">
+              <div className="h-96">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart data={data}>
                     <XAxis dataKey="Name" />
@@ -84,13 +76,13 @@ export default function Home() {
               </div>
             </>
           )}
-        </div>
-      </main>
+        </main>
 
-      <footer className="bg-gray-800 text-white text-center py-4 mt-10">
-        <p>&copy; 2025 TIFAC-CORE in Cyber Security | Amrita Vishwa Vidyapeetham</p>
-        <p className="text-sm text-gray-300">Designed and maintained by Ramaguru Radhakrishnan</p>
-      </footer>
+        <footer className="mt-10 text-sm text-gray-500">
+          <p>&copy; 2025 TIFAC-CORE in Cyber Security | Amrita Vishwa Vidyapeetham</p>
+          <p>Designed and maintained by Ramaguru Radhakrishnan</p>
+        </footer>
+      </div>
     </div>
   );
 }
